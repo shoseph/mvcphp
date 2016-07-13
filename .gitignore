@@ -1,0 +1,3 @@
+
+# I am using netbeans so i need to ignore the netbeans configuration folder of the project
+/nbproject/*
