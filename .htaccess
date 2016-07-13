@@ -7,4 +7,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 ## all requests of our project should be forwarded to the to index page
-RewriteRule ˆ(.+) index.php?url=$1 [QSA, L]
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
