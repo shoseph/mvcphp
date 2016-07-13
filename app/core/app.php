@@ -13,15 +13,15 @@ Class App {
         $url = isset($_GET['url']) ? self::parseUrl($_GET['url']) : [];
         
         // verifying if exists the file
-        if(file_exists("app/controllers/{$url[0]}.php")){
+        if(file_exists("../app/controllers/{$url[0]}Controller.php")){
             
             // seting the value of url and unset the first param in our url array of params
-            $this->controller = $url[0];
+            $this->controller = $url[0] . 'Controller';
             unset($url[0]);
         }
         
         // loading the controller file and creating a new instance of our controller
-        require_once "app/controllers/{$this->controller}.php";
+        require_once "../app/controllers/{$this->controller}.php";
         $this->controller = new $this->controller;
             
         // verifying if the method exist in the controller and setting if its exists

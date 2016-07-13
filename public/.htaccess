@@ -1,0 +1,13 @@
+## this will allow to call the pages
+Options -MultiViews
+
+##we are rewriting the apache engine
+RewriteEngine on
+
+## for the directories
+RewriteCond %{REQUEST_FILENAME} !-d
+#for the files
+RewriteCond %{REQUEST_FILENAME} !-f
+
+## all requests of our project should be forwarded to the to index page
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
